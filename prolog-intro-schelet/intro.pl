@@ -20,8 +20,8 @@ exercitiul(1, []).
 %% restul lui List este egal cu concatenarea restului lui List1 cu
 %% List2.
 
-
-myConcat(_,_,_):- false.
+myConcat([],L,L).
+myConcat([H1|T1],L2,[H1|TSol]) :- myConcat(T1, L2, TSol).
 
 check1:-
     tests([
