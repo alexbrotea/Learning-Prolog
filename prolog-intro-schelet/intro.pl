@@ -48,8 +48,8 @@ exercitiul(2, []).
 %% primul element din L, iar prima parte a lui RevList (de la primul
 %% element pâna la penultimul) este inversul restului elementelor din L.
 
-
-myReverse(_,_):- false.
+myReverse([],[]).
+myReverse([H|T],RevList):- myReverse(T,RevT), myConcat(RevT,[H],RevList).
 
 check2:-
     tests([
