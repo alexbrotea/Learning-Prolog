@@ -81,8 +81,8 @@ exercitiul(3, []).
 %% (rezultatul se întoarce neschimbat de la sfârșitul recursivității
 %% până la apelul inițial).
 
-
-myReverseAcc(_,_,_):- false.
+myReverseAcc([], L, L).
+myReverseAcc([H|T],A,L):- myReverseAcc(T,[H|A],L).
 
 check3:-
     tests([
