@@ -106,7 +106,9 @@ exercitiul(3, []).
 %% facă parte din sublistă. Restul sublistei este o sublistă din restul
 %% listei.
 
-sublista(_,_) :- false.
+sublista([], []).
+sublista([H|T], [H|SubT]) :- sublista(T, SubT).
+sublista([_|T], SubT) :- sublista(T, SubT).
 
 check3 :- tests([
               chk(sublista([1,2,3,4,5],[2,3,4])),
