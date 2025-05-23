@@ -49,7 +49,8 @@ solve_latin(S) :- template(S), correct(S).
 %% Hint: ansamblul X/Y/S este valid în raport cu cele din lista others
 %% dacă nu există o altă poziționare a aceluiași simbol pe aceeași linie
 %% sau pe aceeași coloană.
-safe(_, _) :- false.
+safe(X/Y/S, Others) :-
+    \+ member(X/_/S, Others), \+ member(_/Y/S, Others).
 
 
 check1 :- tests([
