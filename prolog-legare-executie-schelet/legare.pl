@@ -80,7 +80,8 @@ exercitiul(2, []).
 %%
 %% Hint: dăm proprietățile permutării: permutarea are aceeași lungime și
 %% fiecare dintre elementele din Lista4 sunt și în permutare.
-permutari4([_, _, _, _], _) :- false.
+permutari4([A, B, C, D], Perm) :- length(Perm, 4),
+    member(A, Perm), member(B, Perm), member(C, Perm), member(D, Perm).
 
 
 check2 :- tests([
